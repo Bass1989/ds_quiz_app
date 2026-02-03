@@ -14,7 +14,7 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 # タイトル
-st.title("🎓 DS検定 模擬クイズアプリ")
+st.title("🎓 DS検定クイズ")
 # st.caption("第5章：ビジネス課題の解決フロー (問1〜8)")
 
 # データの読み込み
