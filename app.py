@@ -5,11 +5,25 @@ import random
 # ページの設定
 st.set_page_config(page_title="DS検定クイズ", layout="centered")
 
-# CSSでデザインを少し調整（見やすくする）
+# CSSでデザイン調整（見やすくする + スマホ対策）
 st.markdown("""
     <style>
-    .stRadio label {font-size: 14px !important;}
+    /* === 既存の設定 === */
+    .stRadio label {font-size: 20px !important;}
     .explanation {background-color: #f0f2f6; padding: 15px; border-radius: 10px; margin-top: 20px;}
+
+    /* === 追加設定：上部の余白を削る === */
+    .block-container {
+        padding-top: 1rem;   /* 上の隙間を小さくする */
+        padding-bottom: 5rem;
+    }
+
+    /* === 追加設定：スマホ（画面幅600px以下）の時だけタイトルを小さく === */
+    @media (max-width: 600px) {
+        h1 {
+            font-size: 1.5rem !important; /* タイトル文字サイズを小さく */
+        }
+    }
     </style>
     """, unsafe_allow_html=True)
 
