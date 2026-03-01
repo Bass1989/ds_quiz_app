@@ -8,7 +8,7 @@ st.set_page_config(page_title="DS検定クイズ", layout="centered")
 # CSSでデザインを少し調整（見やすくする）
 st.markdown("""
     <style>
-    .stRadio label {font-size: 18px !important;}
+    .stRadio label {font-size: 14px !important;}
     .explanation {background-color: #f0f2f6; padding: 15px; border-radius: 10px; margin-top: 20px;}
     </style>
     """, unsafe_allow_html=True)
@@ -60,6 +60,7 @@ if not df.empty and st.session_state.current_q_index < len(df):
     q_text = row['question']  
     # 1. 「適切でない」を太字にする
     q_text = q_text.replace("適切でない", "**適切でない**")
+    q_text = q_text.replace("不適切", "**不適切**")
     # 2. <br>タグを、Markdownの改行コード（半角スペース2つ + 改行）に置換する
     q_text = q_text.replace("<br>", "  \n")
     # 表示する
