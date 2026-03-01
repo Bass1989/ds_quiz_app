@@ -12,16 +12,23 @@ st.markdown("""
     .stRadio label {font-size: 20px !important;}
     .explanation {background-color: #f0f2f6; padding: 15px; border-radius: 10px; margin-top: 20px;}
 
-    /* === 追加設定：上部の余白を削る === */
+    /* === PC向けの設定：ある程度上に詰める === */
     .block-container {
-        padding-top: 1rem;   /* 上の隙間を小さくする */
+        padding-top: 2rem;
         padding-bottom: 5rem;
     }
 
-    /* === 追加設定：スマホ（画面幅600px以下）の時だけタイトルを小さく === */
+    /* === スマホ（画面幅600px以下）向けの特別設定 === */
     @media (max-width: 600px) {
+        
+        /* 1. 上の余白を広めに確保する（ノッチ対策） */
+        .block-container {
+            padding-top: 4rem !important;  /* ←ここを増やすと下がります */
+        }
+
+        /* 2. タイトルの文字サイズを小さくする */
         h1 {
-            font-size: 1.5rem !important; /* タイトル文字サイズを小さく */
+            font-size: 1.5rem !important;
         }
     }
     </style>
